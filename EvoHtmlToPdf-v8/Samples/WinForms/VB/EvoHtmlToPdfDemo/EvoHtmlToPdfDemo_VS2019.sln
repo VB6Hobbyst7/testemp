@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EvoHtmlToPdfDemo_VS2019", "EvoHtmlToPdfDemo_VS2019.vbproj", "{796E1C88-2B23-4464-B3A7-3C070E7E240A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{796E1C88-2B23-4464-B3A7-3C070E7E240A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796E1C88-2B23-4464-B3A7-3C070E7E240A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796E1C88-2B23-4464-B3A7-3C070E7E240A}.Debug|x86.ActiveCfg = Debug|x86
+		{796E1C88-2B23-4464-B3A7-3C070E7E240A}.Debug|x86.Build.0 = Debug|x86
+		{796E1C88-2B23-4464-B3A7-3C070E7E240A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796E1C88-2B23-4464-B3A7-3C070E7E240A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{796E1C88-2B23-4464-B3A7-3C070E7E240A}.Release|x86.ActiveCfg = Release|x86
+		{796E1C88-2B23-4464-B3A7-3C070E7E240A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E6EE912-F02C-4901-9717-EF6A5C07CFBA}
+	EndGlobalSection
+EndGlobal

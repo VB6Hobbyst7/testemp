@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A0295C7-7F31-4871-8F54-A204A84A25FC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EvoHtmlToPdfDemo</RootNamespace>
+    <AssemblyName>EvoHtmlToPdfDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="evohtmltopdf">
+      <HintPath>..\..\..\evohtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTML_to_ImageController.cs" />
+    <Compile Include="Controllers\HTML_to_Image\Convert_HTML_to_ImageController.cs" />
+    <Compile Include="Controllers\HTML_to_Image\Convert_HTML_to_SVGController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTML_to_Image_Elements\Add_HTML_to_Image_Elements_to_PDFController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTML_to_PDF_Elements\Add_HTML_to_PDF_Elements_to_PDFController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\BookmarksController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Bookmarks\Auto_Create_BookmarksController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Bookmarks\Select_in_API_HTML_Elements_to_BookmarkController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Bookmarks\Select_in_HTML_Elements_to_BookmarkController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Convert_Current_PageController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Flash_and_Extensions\Convert_HTML_with_Flash_to_PDFController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Convert_Page_in_Same_SessionController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\File_Links_Attachments\Create_File_Links_and_AtachmentsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Color_Spaces\Create_GrayScale_CMYKController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Pages_BackgroundController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Pages_Background\Add_Elements_in_BackgroundController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Pages_Background\Add_Elements_Over_Main_ContentController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_SecurityController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Security\Digital_SignaturesController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Security\PDF_Permissions_and_PasswordController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Standards\Create_PDF_A_and_PDF_X_DescriptionController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Viewer_PreferencesController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Viewer_Preferences\Set_Initial_Zoom_LevelController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Viewer_Preferences\Set_Viewer_PreferencesController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Text_Notes\Create_Text_NotesController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Fonts_Embedding\Embed_Fonts_in_PDFController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Getting_StartedController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTTP_GET_and_POST\GET_and_POST_HTTP_MethodsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Headers_and_FootersController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Headers_and_Footers\Header_Footer_Auto_ResizeController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Headers_and_Footers\Header_Footer_ChangeController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Headers_and_Footers\Header_Footer_In_External_PDFController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Headers_and_Footers\Header_Footer_on_Merged_HTMLController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Headers_and_Footers\HTML_in_Header_FooterController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Headers_and_Footers\Page_Numbers_in_HTMLController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTML_Content_ScalingController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTML_Elements_LocationController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTML_Elements_Location\Select_in_API_Elements_to_RetrieveController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTML_Elements_Location\Select_in_HTML_Elements_to_RetrieveController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTML_Elements_VisibilityController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTML_Elements_Visibility\Select_in_API_Elements_to_HideController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTML_Elements_Visibility\Select_in_HTML_Elements_to_HideController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTTP_Headers_and_CookiesController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTTP_Headers_and_Cookies\Add_Cookies_to_RequestController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\HTTP_Headers_and_Cookies\Add_HTTP_Headers_to_RequestController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Images_QualityController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Images_Quality\Images_Scaling_and_CompressionController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Images_Quality\Replace_with_Higher_Quality_ImagesController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Internal_LinksController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Internal_Links\Convert_Internal_Links_to_PDFController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Internal_Links\Define_Custom_Internal_LinksController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Media_Types\Select_Screen_or_Print_Media_TypeController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Merge_Multiple_HTMLController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Merge_With_Existing_PDFController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Page_BreaksController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_APIController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSSController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_Images_Using_APIController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_APIController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_CSSController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Partially_Convert_HTMLController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_ActionsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Actions\Execute_JavaScript_Button_ClickedController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Actions\Execute_JavaScript_Open_ActionController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Actions\Go_To_Page_Open_ActionController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_FormsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Forms\Auto_Create_PDF_FormsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\PDF_Forms\Define_in_HTML_PDF_Form_FieldsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Proxy_Options\Proxy_OptionsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Repeat_HTML_Table_Header_FooterController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\SVG_to_PDFController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Table_of_ContentsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Table_of_Contents\Auto_Create_Table_of_ContentsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Table_of_Contents\Define_in_HTML_Table_of_Contents_ItemsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Table_of_Contents\Insert_PDF_Pages_Before_Table_of_ContentsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Table_of_Contents\Merge_Table_of_ContentsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Triggering_Modes\Conversion_Triggering_ModesController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\URI_LinksController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\URI_Links\Convert_URI_Links_to_PDFController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\URI_Links\Define_Custom_URI_LinksController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Watermarks_Stamps\Add_Watermarks_StampsController.cs" />
+    <Compile Include="Controllers\HTML_to_PDF\Web_Fonts_to_PDFController.cs" />
+    <Compile Include="Controllers\PDF_Creator\Headers_and_Footers\PDF_Creator_Header_Footer_Auto_ResizeController.cs" />
+    <Compile Include="Controllers\PDF_Creator\Headers_and_Footers\PDF_Creator_Header_Footer_ChangeController.cs" />
+    <Compile Include="Controllers\PDF_Creator\Headers_and_Footers\PDF_Creator_Header_Footer_In_External_PDFController.cs" />
+    <Compile Include="Controllers\PDF_Creator\Headers_and_Footers\PDF_Creator_HTML_in_Header_FooterController.cs" />
+    <Compile Include="Controllers\PDF_Creator\Headers_and_Footers\PDF_Creator_Page_Numbers_in_HTMLController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Actions\PDF_Creator_Execute_JavaScript_Button_ClickedController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Actions\PDF_Creator_Execute_JavaScript_Open_ActionController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Actions\PDF_Creator_Go_To_Page_Open_ActionController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_BookmarksController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_Create_PDF_DocumentsController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_File_AttachmentsController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_Graphic_ElementsController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_Headers_and_FootersController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_HTML_to_Image_ElementsController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_HTML_to_PDF_ElementsController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_Image_ElementsController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_Internal_LinksController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_PDF_ActionsController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_PDF_FormsController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_PDF_SecurityController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_PDF_Viewer_PreferencesController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_Text_ElementsController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_Text_NotesController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Creator_URI_LinksController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Security\PDF_Creator_Digital_SignaturesController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Security\PDF_Creator_PDF_Permissions_and_PasswordController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Viewer_Preferences\PDF_Creator_Set_Initial_Zoom_LevelController.cs" />
+    <Compile Include="Controllers\PDF_Creator\PDF_Viewer_Preferences\PDF_Creator_Set_Viewer_PreferencesController.cs" />
+    <Compile Include="Controllers\PDF_Editor\PDF_Editor_Fill_PDF_FormsController.cs" />
+    <Compile Include="Controllers\PDF_Editor\PDF_Editor_Merge_PDFController.cs" />
+    <Compile Include="Controllers\PDF_Editor\PDF_Editor_Split_PDFController.cs" />
+    <Compile Include="Controllers\PDF_Editor\PDF_Editor_Stamp_PDFController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DemoAppFiles\Input\Attach_Files\Attachment_File.txt" />
+    <Content Include="DemoAppFiles\Input\Attach_Files\Attachment_File_Icon.txt" />
+    <Content Include="DemoAppFiles\Input\Attach_Files\Attachment_Stream.txt" />
+    <Content Include="DemoAppFiles\Input\Attach_Files\Attachment_Stream_Icon.txt" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Button_JavaScript_Actions.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Custom_Internal_Links.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Custom_URI_Links.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Digital_Signatures.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\File_Attachments.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\File_Links_and_Attachments.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Flash_Examples.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Footer_Alt_HTML.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Footer_HTML.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Header_Alt_HTML.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Header_HTML.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Hierarchical_Bookmarks.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\HTML_Elements_Info.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\HTML_Elements_to_Hide.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\HTML_Form.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Img\logo.jpg" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Img\wheels_trans.png" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Media_Type_Rules.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Page_Breaks_Inside_Avoid_Using_API.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Page_Breaks_Inside_Avoid_Using_CSS.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Page_Break_Before_and_After_Using_API.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Page_Break_Before_and_After_Using_CSS.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Page_Numbers_in_HTML.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Repeat_HTML_Header_Footer.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Replace_Images.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Select_HTML_Form_Fields.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\SVG_Examples.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Table_of_Contents.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Text_Notes.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Triggering_Modes.html" />
+    <Content Include="DemoAppFiles\Input\HTML_Files\Watermark_Stamp.html" />
+    <Content Include="DemoAppFiles\Input\Images\background.jpg" />
+    <Content Include="DemoAppFiles\Input\Images\box.jpg" />
+    <Content Include="DemoAppFiles\Input\Images\compass.png" />
+    <Content Include="DemoAppFiles\Input\Images\landscape.jpg" />
+    <Content Include="DemoAppFiles\Input\Images\logo.jpg" />
+    <Content Include="DemoAppFiles\Input\Images\logo_trans.png" />
+    <Content Include="DemoAppFiles\Input\Images\picture_large.jpg" />
+    <Content Include="DemoAppFiles\Input\Images\picture_small.jpg" />
+    <Content Include="DemoAppFiles\Input\Images\picture_smaller.jpg" />
+    <Content Include="DemoAppFiles\Input\Images\rose.png" />
+    <Content Include="DemoAppFiles\Input\Images\transparent.png" />
+    <Content Include="DemoAppFiles\Input\Linked_Files\Linked_External_File.txt" />
+    <Content Include="DemoAppFiles\Input\Text_Files\Large_Text_File.txt" />
+    <Content Include="DemoAppFiles\Input\Text_Files\Text_File.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="img\CollapseAll.bmp" />
+    <Content Include="img\evo.ico" />
+    <Content Include="img\evologo-100-trans.png" />
+    <Content Include="img\evologo-100.jpg" />
+    <Content Include="img\evologo-250.png" />
+    <Content Include="img\ExpandAll.bmp" />
+    <Content Include="img\item.gif" />
+    <Content Include="img\logo.jpg" />
+    <Content Include="img\minus.gif" />
+    <Content Include="img\pdficon-20.png" />
+    <Content Include="img\plus.gif" />
+    <Content Include="DemoAppFiles\Input\Certificates\evopdf.pfx" />
+    <Content Include="DemoAppFiles\Input\Fonts\OpenTypePostScript.otf" />
+    <Content Include="DemoAppFiles\Input\Fonts\OpenTypeTrueType.otf" />
+    <Content Include="DemoAppFiles\Input\Fonts\TrueType.ttf" />
+    <Content Include="DemoAppFiles\Input\PDF_Files\Fill_PDF_Forms.pdf" />
+    <Content Include="DemoAppFiles\Input\PDF_Files\Merge_After_Conversion.pdf" />
+    <Content Include="DemoAppFiles\Input\PDF_Files\Merge_Before_Conversion.pdf" />
+    <Content Include="DemoAppFiles\Input\PDF_Files\PDF_Document.pdf" />
+    <Content Include="styles\styles.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Convert_Current_Page\Index.cshtml" />
+    <Content Include="Views\Convert_Page_in_Same_Session\Index.cshtml" />
+    <Content Include="Views\Convert_Page_in_Same_Session\Display_Session_Variables.cshtml" />
+    <Content Include="Views\Getting_Started\Index.cshtml" />
+    <Content Include="Views\HTML_Content_Scaling\Index.cshtml" />
+    <Content Include="Views\Merge_Multiple_HTML\Index.cshtml" />
+    <Content Include="Views\Merge_With_Existing_PDF\Index.cshtml" />
+    <Content Include="Views\Partially_Convert_HTML\Index.cshtml" />
+    <Content Include="Views\Repeat_HTML_Table_Header_Footer\Index.cshtml" />
+    <Content Include="Views\Headers_and_Footers\HTML_in_Header_Footer.cshtml" />
+    <Content Include="Views\Headers_and_Footers\Page_Numbers_in_HTML.cshtml" />
+    <Content Include="Views\Headers_and_Footers\Header_Footer_Change.cshtml" />
+    <Content Include="Views\Headers_and_Footers\Header_Footer_In_External_PDF.cshtml" />
+    <Content Include="Views\Headers_and_Footers\Header_Footer_on_Merged_HTML.cshtml" />
+    <Content Include="Views\Headers_and_Footers\Header_Footer_Auto_Resize.cshtml" />
+    <Content Include="Views\Page_Breaks\Insert_Page_Breaks_Before_After_Using_CSS.cshtml" />
+    <Content Include="Views\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS.cshtml" />
+    <Content Include="Views\Page_Breaks\Insert_Page_Breaks_Before_After_Using_API.cshtml" />
+    <Content Include="Views\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_API.cshtml" />
+    <Content Include="Views\Page_Breaks\Avoid_Page_Breaks_Inside_Images_Using_API.cshtml" />
+    <Content Include="Views\Select_Screen_or_Print_Media_Type\Index.cshtml" />
+    <Content Include="Views\Conversion_Triggering_Modes\Index.cshtml" />
+    <Content Include="Views\Bookmarks\Auto_Create_Bookmarks.cshtml" />
+    <Content Include="Views\Bookmarks\Select_in_API_HTML_Elements_to_Bookmark.cshtml" />
+    <Content Include="Views\Bookmarks\Select_in_HTML_Elements_to_Bookmark.cshtml" />
+    <Content Include="Views\Table_of_Contents\Auto_Create_Table_of_Contents.cshtml" />
+    <Content Include="Views\Table_of_Contents\Define_in_HTML_Table_of_Contents_Items.cshtml" />
+    <Content Include="Views\Table_of_Contents\Merge_Table_of_Contents.cshtml" />
+    <Content Include="Views\Table_of_Contents\Insert_PDF_Pages_Before_Table_of_Contents.cshtml" />
+    <Content Include="Views\PDF_Forms\Auto_Create_PDF_Forms.cshtml" />
+    <Content Include="Views\PDF_Forms\Define_in_HTML_PDF_Form_Fields.cshtml" />
+    <Content Include="Views\SVG_to_PDF\Index.cshtml" />
+    <Content Include="Views\Web_Fonts_to_PDF\Index.cshtml" />
+    <Content Include="Views\GET_and_POST_HTTP_Methods\Index.cshtml" />
+    <Content Include="Views\Proxy_Options\Index.cshtml" />
+    <Content Include="Views\HTTP_Headers_and_Cookies\Add_HTTP_Headers_to_Request.cshtml" />
+    <Content Include="Views\HTTP_Headers_and_Cookies\Add_Cookies_to_Request.cshtml" />
+    <Content Include="Views\Embed_Fonts_in_PDF\Index.cshtml" />
+    <Content Include="Views\HTML_Elements_Location\Select_in_API_Elements_to_Retrieve.cshtml" />
+    <Content Include="Views\HTML_Elements_Location\Select_in_HTML_Elements_to_Retrieve.cshtml" />
+    <Content Include="Views\HTML_Elements_Visibility\Select_in_API_Elements_to_Hide.cshtml" />
+    <Content Include="Views\HTML_Elements_Visibility\Select_in_HTML_Elements_to_Hide.cshtml" />
+    <Content Include="Views\URI_Links\Convert_URI_Links_to_PDF.cshtml" />
+    <Content Include="Views\URI_Links\Define_Custom_URI_Links.cshtml" />
+    <Content Include="Views\Internal_Links\Convert_Internal_Links_to_PDF.cshtml" />
+    <Content Include="Views\Internal_Links\Define_Custom_Internal_Links.cshtml" />
+    <Content Include="Views\Create_File_Links_and_Atachments\Index.cshtml" />
+    <Content Include="Views\Create_Text_Notes\Index.cshtml" />
+    <Content Include="Views\PDF_Actions\Execute_JavaScript_Open_Action.cshtml" />
+    <Content Include="Views\PDF_Actions\Go_To_Page_Open_Action.cshtml" />
+    <Content Include="Views\PDF_Actions\Execute_JavaScript_Button_Clicked.cshtml" />
+    <Content Include="Views\Add_HTML_to_PDF_Elements_to_PDF\Index.cshtml" />
+    <Content Include="Views\Add_HTML_to_Image_Elements_to_PDF\Index.cshtml" />
+    <Content Include="Views\Images_Quality\Images_Scaling_and_Compression.cshtml" />
+    <Content Include="Views\Images_Quality\Replace_with_Higher_Quality_Images.cshtml" />
+    <Content Include="Views\Convert_HTML_with_Flash_to_PDF\Index.cshtml" />
+    <Content Include="Views\Add_Watermarks_Stamps\Index.cshtml" />
+    <Content Include="Views\PDF_Pages_Background\Add_Elements_in_Background.cshtml" />
+    <Content Include="Views\PDF_Pages_Background\Add_Elements_Over_Main_Content.cshtml" />
+    <Content Include="Views\Create_PDF_A_and_PDF_X_Description\Index.cshtml" />
+    <Content Include="Views\Create_GrayScale_CMYK\Index.cshtml" />
+    <Content Include="Views\PDF_Viewer_Preferences\Set_Viewer_Preferences.cshtml" />
+    <Content Include="Views\PDF_Viewer_Preferences\Set_Initial_Zoom_Level.cshtml" />
+    <Content Include="Views\PDF_Security\PDF_Permissions_and_Password.cshtml" />
+    <Content Include="Views\PDF_Security\Digital_Signatures.cshtml" />
+    <Content Include="Views\HTML_to_Image\Convert_HTML_to_Image.cshtml" />
+    <Content Include="Views\HTML_to_Image\Convert_HTML_to_SVG.cshtml" />
+    <Content Include="Views\PDF_Creator_Create_PDF_Documents\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_HTML_to_PDF_Elements\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_HTML_to_Image_Elements\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_Text_Elements\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_Graphic_Elements\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_Image_Elements\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_Headers_and_Footers\PDF_Creator_HTML_in_Header_Footer.cshtml" />
+    <Content Include="Views\PDF_Creator_Headers_and_Footers\PDF_Creator_Page_Numbers_in_HTML.cshtml" />
+    <Content Include="Views\PDF_Creator_Headers_and_Footers\PDF_Creator_Header_Footer_Change.cshtml" />
+    <Content Include="Views\PDF_Creator_Headers_and_Footers\PDF_Creator_Header_Footer_In_External_PDF.cshtml" />
+    <Content Include="Views\PDF_Creator_Headers_and_Footers\PDF_Creator_Header_Footer_Auto_Resize.cshtml" />
+    <Content Include="Views\PDF_Creator_Bookmarks\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_PDF_Forms\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_URI_Links\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_Internal_Links\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_File_Attachments\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_Text_Notes\Index.cshtml" />
+    <Content Include="Views\PDF_Creator_PDF_Actions\PDF_Creator_Execute_JavaScript_Open_Action.cshtml" />
+    <Content Include="Views\PDF_Creator_PDF_Actions\PDF_Creator_Go_To_Page_Open_Action.cshtml" />
+    <Content Include="Views\PDF_Creator_PDF_Actions\PDF_Creator_Execute_JavaScript_Button_Clicked.cshtml" />
+    <Content Include="Views\PDF_Creator_PDF_Viewer_Preferences\PDF_Creator_Set_Viewer_Preferences.cshtml" />
+    <Content Include="Views\PDF_Creator_PDF_Viewer_Preferences\PDF_Creator_Set_Initial_Zoom_Level.cshtml" />
+    <Content Include="Views\PDF_Creator_PDF_Security\PDF_Creator_PDF_Permissions_and_Password.cshtml" />
+    <Content Include="Views\PDF_Creator_PDF_Security\PDF_Creator_Digital_Signatures.cshtml" />
+    <Content Include="Views\PDF_Editor_Fill_PDF_Forms\Index.cshtml" />
+    <Content Include="Views\PDF_Editor_Merge_PDF\Index.cshtml" />
+    <Content Include="Views\PDF_Editor_Split_PDF\Index.cshtml" />
+    <Content Include="Views\PDF_Editor_Stamp_PDF\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60941</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62030/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

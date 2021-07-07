@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            margin: 3px 3px 3px 3px;
+            font-family: 'Times New Roman';
+            font-size: 12px;
+        }
+
+        li {
+            margin-top: 5px;
+        }
+
+        .title {
+            font-size: 16px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <b>EVO HTML to PDF Converter</b> can be configured to merge the tables of contents for multiple HTML documents added to the same PDF document in an unified table of contents. The <i>Document</i> class
+    exposes through the <i>TableOfContents</i> property an object which can be used to control the unified table of contents similar to <i>TableOfContentsOptions</i> property of the <i>HtmlToPdfConverter</i> class.
+    The <i>TableOfContentsEnabled</i> property of the <i>HtmlToPdfElement</i> class controls if the table of contents for a HTML document is included or not in the unified table of contents of the PDF document.
+    <br />
+    <br />
+    The following options are available in this demo:<br />
+    <br />
+    <ul>
+        <li>
+            <b>First HTML Page URL</b>. This is the URL of the first HTML document to be added on the first page of the PDF document
+        </li>
+        <li>
+            <b>Second HTML Page URL</b>. This is the URL of the second HTML document to be added in PDF immediately after the first HTML document or on a new PDF page
+            following the first HTML document
+        </li>
+        <li>
+            <b>Start the Second HTML on a New PDF Page</b>. As the name suggests this option allows you to choose if you want to add the second HTML document immediately
+            after the first HTML document or on a new PDF page following the first HTML document
+        </li>
+        <li>
+            <b>Create a Table of Contents from H1 to H6 Tags</b>. Using this option you can enable or disable the creation of table of contents from the H1 to H6 tags found in the converted HTML document
+        </li>
+        <li>
+            <b>Include First HTML TOC</b>. Using this option you can control if the table of contents for the first HTML is included or not in the unified table of contents of the PDF document
+        </li>
+        <li>
+            <b>Include Second HTML TOC</b>. Using this option you can control if the table of contents for the second HTML is included or not in the unified table of contents of the PDF document
+        </li>
+    </ul>
+</body>
+</html>

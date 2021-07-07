@@ -1,0 +1,5 @@
+Publish Azure Cloud Service Application
+=======================================
+
+To publish the demo cloud service application in Azure Cloud open the solution in Visual Studio, right click on EvoHtmlToPdfDemo.Azure project 
+and select the Publish item from the contextual menu.

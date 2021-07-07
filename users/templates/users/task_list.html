@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="{% static 'css/pdf.css' %}">
+</head>
+<body>
+	<h1>Daily Task List</h1>
+	<table>
+		<tr>
+			<th id="th-done">Done?</th>
+			<th id="th-task-description">Task description</th>
+			<th id="th-due-date">Due date</th>
+		</tr>
+		{% if tasks %}
+			{% for task in tasks %}
+				{% if forloop.counter == 1 %}
+					<tr>
+						<td class="td-done">{{ task.is_complete }}</td>
+						<td class="td-white">{{ task.task_detail }}</td>
+						<td class="td-due-date">{{ task.due_date }}</td>
+					</tr>
+				{% elif forloop.counter|divisibleby:"2" %}
+					<tr>
+						<td class="td-done">{{ task.is_complete }}</td>
+						<td class="td-gray">{{ task.task_detail }}</td>
+						<td class="td-due-date">{{ task.due_date }}</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td class="td-done">{{ task.is_complete }}</td>
+						<td class="td-white">{{ task.task_detail }}</td>
+						<td class="td-due-date">{{ task.due_date }}</td>
+					</tr>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</table>
+</body>
+</html>

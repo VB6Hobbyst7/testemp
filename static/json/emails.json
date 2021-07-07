@@ -1,0 +1,12 @@
+{
+  "email_english": {
+    "banner": "https://i.imgur.com/v0nmt4M.png",
+    "body": "Welcome to the team! Please click the button below to set your password and sign in.",
+    "button": "Complete Sign Up"
+  },
+  "email_french": {
+    "banner": "https://i.imgur.com/DOx073V.png",
+    "body": "Bienvenue dans l'équipe! Veuillez cliquer sur le bouton ci-dessous pour définir votre mot de passe et vous connecter.",
+    "button": "Terminer L'inscription"
+  }
+}

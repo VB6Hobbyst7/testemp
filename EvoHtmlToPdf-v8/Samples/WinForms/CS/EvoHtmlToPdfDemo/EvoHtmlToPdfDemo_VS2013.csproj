@@ -1,0 +1,2637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{796E1C88-2B23-4464-B3A7-3C070E7E240A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EvoHtmlToPdfDemo</RootNamespace>
+    <AssemblyName>EvoHtmlToPdfDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>evo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="evohtmltopdf, Version=7.5.0.0, Culture=neutral, PublicKeyToken=e1fcbb86597de299, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\evohtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DemoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemoForm.Designer.cs">
+      <DependentUpon>DemoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_Image_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_Image_Demo.Designer.cs">
+      <DependentUpon>HTML_to_Image_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_Image_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_Image_Description.Designer.cs">
+      <DependentUpon>HTML_to_Image_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_Image_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_Image_Sample_Code.Designer.cs">
+      <DependentUpon>HTML_to_Image_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_SVG_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_SVG_Demo.Designer.cs">
+      <DependentUpon>HTML_to_SVG_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_SVG_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_SVG_Description.Designer.cs">
+      <DependentUpon>HTML_to_SVG_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_SVG_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_Image\HTML_to_SVG_Sample_Code.Designer.cs">
+      <DependentUpon>HTML_to_SVG_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Auto_Create_Bookmarks_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Auto_Create_Bookmarks_Demo.Designer.cs">
+      <DependentUpon>Auto_Create_Bookmarks_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Auto_Create_Bookmarks_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Auto_Create_Bookmarks_Description.Designer.cs">
+      <DependentUpon>Auto_Create_Bookmarks_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Auto_Create_Bookmarks_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Auto_Create_Bookmarks_Sample_Code.Designer.cs">
+      <DependentUpon>Auto_Create_Bookmarks_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_API_HTML_Elements_to_Bookmark_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_API_HTML_Elements_to_Bookmark_Demo.Designer.cs">
+      <DependentUpon>Select_in_API_HTML_Elements_to_Bookmark_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_API_HTML_Elements_to_Bookmark_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_API_HTML_Elements_to_Bookmark_Description.Designer.cs">
+      <DependentUpon>Select_in_API_HTML_Elements_to_Bookmark_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_API_HTML_Elements_to_Bookmark_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_API_HTML_Elements_to_Bookmark_Sample_Code.Designer.cs">
+      <DependentUpon>Select_in_API_HTML_Elements_to_Bookmark_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_HTML_Elements_to_Bookmark_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_HTML_Elements_to_Bookmark_Description.Designer.cs">
+      <DependentUpon>Select_in_HTML_Elements_to_Bookmark_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_HTML_Elements_to_Bookmark_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_HTML_Elements_to_Bookmark_Demo.Designer.cs">
+      <DependentUpon>Select_in_HTML_Elements_to_Bookmark_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_HTML_Elements_to_Bookmark_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Bookmarks\Select_in_HTML_Elements_to_Bookmark_Sample_Code.Designer.cs">
+      <DependentUpon>Select_in_HTML_Elements_to_Bookmark_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\File_Links_Attachments\Create_File_Links_and_Atachments_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\File_Links_Attachments\Create_File_Links_and_Atachments_Demo.Designer.cs">
+      <DependentUpon>Create_File_Links_and_Atachments_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\File_Links_Attachments\Create_File_Links_and_Atachments_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\File_Links_Attachments\Create_File_Links_and_Atachments_Description.Designer.cs">
+      <DependentUpon>Create_File_Links_and_Atachments_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\File_Links_Attachments\Create_File_Links_and_Atachments_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\File_Links_Attachments\Create_File_Links_and_Atachments_Sample_Code.Designer.cs">
+      <DependentUpon>Create_File_Links_and_Atachments_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Flash_and_Extensions\Convert_HTML_with_Flash_to_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Flash_and_Extensions\Convert_HTML_with_Flash_to_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Convert_HTML_with_Flash_to_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Flash_and_Extensions\Convert_HTML_with_Flash_to_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Flash_and_Extensions\Convert_HTML_with_Flash_to_PDF_Description.Designer.cs">
+      <DependentUpon>Convert_HTML_with_Flash_to_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Flash_and_Extensions\Convert_HTML_with_Flash_to_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Flash_and_Extensions\Convert_HTML_with_Flash_to_PDF_Demo.Designer.cs">
+      <DependentUpon>Convert_HTML_with_Flash_to_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Fonts_Embedding\Embed_Fonts_in_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Fonts_Embedding\Embed_Fonts_in_PDF_Demo.Designer.cs">
+      <DependentUpon>Embed_Fonts_in_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Fonts_Embedding\Embed_Fonts_in_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Fonts_Embedding\Embed_Fonts_in_PDF_Description.Designer.cs">
+      <DependentUpon>Embed_Fonts_in_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Fonts_Embedding\Embed_Fonts_in_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Fonts_Embedding\Embed_Fonts_in_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Embed_Fonts_in_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\SVG_to_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\SVG_to_PDF_Demo.Designer.cs">
+      <DependentUpon>SVG_to_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\SVG_to_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\SVG_to_PDF_Description.Designer.cs">
+      <DependentUpon>SVG_to_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\SVG_to_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\SVG_to_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>SVG_to_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\Web_Fonts_to_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\Web_Fonts_to_PDF_Demo.Designer.cs">
+      <DependentUpon>Web_Fonts_to_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\Web_Fonts_to_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\Web_Fonts_to_PDF_Description.Designer.cs">
+      <DependentUpon>Web_Fonts_to_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\Web_Fonts_to_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML5_Features\Web_Fonts_to_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Web_Fonts_to_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_API_Elements_to_Retrieve_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_API_Elements_to_Retrieve_Demo.Designer.cs">
+      <DependentUpon>Select_in_API_Elements_to_Retrieve_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_API_Elements_to_Retrieve_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_API_Elements_to_Retrieve_Description.Designer.cs">
+      <DependentUpon>Select_in_API_Elements_to_Retrieve_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_API_Elements_to_Retrieve_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_API_Elements_to_Retrieve_Sample_Code.Designer.cs">
+      <DependentUpon>Select_in_API_Elements_to_Retrieve_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_HTML_Elements_to_Retrieve_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_HTML_Elements_to_Retrieve_Demo.Designer.cs">
+      <DependentUpon>Select_in_HTML_Elements_to_Retrieve_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_HTML_Elements_to_Retrieve_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_HTML_Elements_to_Retrieve_Description.Designer.cs">
+      <DependentUpon>Select_in_HTML_Elements_to_Retrieve_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_HTML_Elements_to_Retrieve_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Location\Select_in_HTML_Elements_to_Retrieve_Sample_Code.Designer.cs">
+      <DependentUpon>Select_in_HTML_Elements_to_Retrieve_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_API_Elements_to_Hide_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_API_Elements_to_Hide_Demo.Designer.cs">
+      <DependentUpon>Select_in_API_Elements_to_Hide_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_API_Elements_to_Hide_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_API_Elements_to_Hide_Description.Designer.cs">
+      <DependentUpon>Select_in_API_Elements_to_Hide_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_API_Elements_to_Hide_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_API_Elements_to_Hide_Sample_Code.Designer.cs">
+      <DependentUpon>Select_in_API_Elements_to_Hide_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_HTML_Elements_to_Hide_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_HTML_Elements_to_Hide_Demo.Designer.cs">
+      <DependentUpon>Select_in_HTML_Elements_to_Hide_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_HTML_Elements_to_Hide_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_HTML_Elements_to_Hide_Description.Designer.cs">
+      <DependentUpon>Select_in_HTML_Elements_to_Hide_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_HTML_Elements_to_Hide_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_HTML_Elements_to_Hide_Sample_Code.Designer.cs">
+      <DependentUpon>Select_in_HTML_Elements_to_Hide_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_Image_Elements\Add_HTML_to_Image_Elements_to_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_Image_Elements\Add_HTML_to_Image_Elements_to_PDF_Demo.Designer.cs">
+      <DependentUpon>Add_HTML_to_Image_Elements_to_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_Image_Elements\Add_HTML_to_Image_Elements_to_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_Image_Elements\Add_HTML_to_Image_Elements_to_PDF_Description.Designer.cs">
+      <DependentUpon>Add_HTML_to_Image_Elements_to_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_Image_Elements\Add_HTML_to_Image_Elements_to_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_Image_Elements\Add_HTML_to_Image_Elements_to_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Add_HTML_to_Image_Elements_to_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_PDF_Elements\Add_HTML_to_PDF_Elements_to_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_PDF_Elements\Add_HTML_to_PDF_Elements_to_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Add_HTML_to_PDF_Elements_to_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_PDF_Elements\Add_HTML_to_PDF_Elements_to_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_PDF_Elements\Add_HTML_to_PDF_Elements_to_PDF_Description.Designer.cs">
+      <DependentUpon>Add_HTML_to_PDF_Elements_to_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_PDF_Elements\Add_HTML_to_PDF_Elements_to_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_to_PDF_Elements\Add_HTML_to_PDF_Elements_to_PDF_Demo.Designer.cs">
+      <DependentUpon>Add_HTML_to_PDF_Elements_to_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\GET_and_POST_HTTP_Methods_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\GET_and_POST_HTTP_Methods_Demo.Designer.cs">
+      <DependentUpon>GET_and_POST_HTTP_Methods_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\GET_and_POST_HTTP_Methods_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\GET_and_POST_HTTP_Methods_Description.Designer.cs">
+      <DependentUpon>GET_and_POST_HTTP_Methods_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\GET_and_POST_HTTP_Methods_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\GET_and_POST_HTTP_Methods_Sample_Code.Designer.cs">
+      <DependentUpon>GET_and_POST_HTTP_Methods_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\Proxy_Options_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\Proxy_Options_Demo.Designer.cs">
+      <DependentUpon>Proxy_Options_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\Proxy_Options_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\Proxy_Options_Description.Designer.cs">
+      <DependentUpon>Proxy_Options_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\Proxy_Options_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_GET_and_POST\Proxy_Options_Sample_Code.Designer.cs">
+      <DependentUpon>Proxy_Options_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_Cookies_to_Request_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_Cookies_to_Request_Demo.Designer.cs">
+      <DependentUpon>Add_Cookies_to_Request_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_Cookies_to_Request_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_Cookies_to_Request_Description.Designer.cs">
+      <DependentUpon>Add_Cookies_to_Request_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_Cookies_to_Request_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_Cookies_to_Request_Sample_Code.Designer.cs">
+      <DependentUpon>Add_Cookies_to_Request_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_HTTP_Headers_to_Request_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_HTTP_Headers_to_Request_Demo.Designer.cs">
+      <DependentUpon>Add_HTTP_Headers_to_Request_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_HTTP_Headers_to_Request_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_HTTP_Headers_to_Request_Description.Designer.cs">
+      <DependentUpon>Add_HTTP_Headers_to_Request_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_HTTP_Headers_to_Request_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_HTTP_Headers_to_Request_Sample_Code.Designer.cs">
+      <DependentUpon>Add_HTTP_Headers_to_Request_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Images_Scaling_and JPEG_Compression_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Images_Scaling_and JPEG_Compression_Demo.Designer.cs">
+      <DependentUpon>Images_Scaling_and JPEG_Compression_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Images_Scaling_and JPEG_Compression_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Images_Scaling_and JPEG_Compression_Description.Designer.cs">
+      <DependentUpon>Images_Scaling_and JPEG_Compression_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Images_Scaling_and JPEG_Compression_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Images_Scaling_and JPEG_Compression_Sample_Code.Designer.cs">
+      <DependentUpon>Images_Scaling_and JPEG_Compression_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Replace_with_Higher_Quality_Images_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Replace_with_Higher_Quality_Images_Demo.Designer.cs">
+      <DependentUpon>Replace_with_Higher_Quality_Images_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Replace_with_Higher_Quality_Images_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Replace_with_Higher_Quality_Images_Description.Designer.cs">
+      <DependentUpon>Replace_with_Higher_Quality_Images_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Replace_with_Higher_Quality_Images_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Images_Quality\Replace_with_Higher_Quality_Images_Sample_Code.Designer.cs">
+      <DependentUpon>Replace_with_Higher_Quality_Images_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Convert_Internal_Links_to_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Convert_Internal_Links_to_PDF_Demo.Designer.cs">
+      <DependentUpon>Convert_Internal_Links_to_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Convert_Internal_Links_to_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Convert_Internal_Links_to_PDF_Description.Designer.cs">
+      <DependentUpon>Convert_Internal_Links_to_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Convert_Internal_Links_to_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Convert_Internal_Links_to_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Convert_Internal_Links_to_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Define_Custom_Internal_Links_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Define_Custom_Internal_Links_Demo.Designer.cs">
+      <DependentUpon>Define_Custom_Internal_Links_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Define_Custom_Internal_Links_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Define_Custom_Internal_Links_Description.Designer.cs">
+      <DependentUpon>Define_Custom_Internal_Links_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Define_Custom_Internal_Links_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Internal_Links\Define_Custom_Internal_Links_Sample_Code.Designer.cs">
+      <DependentUpon>Define_Custom_Internal_Links_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Demo.Designer.cs">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Description.Designer.cs">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Sample_Code.Designer.cs">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_API_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_API_Demo.Designer.cs">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_API_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_API_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_API_Description.Designer.cs">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_API_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_API_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_API_Sample_Code.Designer.cs">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_API_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Button_Clicked_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Button_Clicked_Demo.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Button_Clicked_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Button_Clicked_Description.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Button_Clicked_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Button_Clicked_Sample_Code.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Open_Action_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Open_Action_Demo.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Open_Action_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Open_Action_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Open_Action_Description.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Open_Action_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Open_Action_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Open_Action_Sample_Code.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Open_Action_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Go_To_Page_Open_Action_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Go_To_Page_Open_Action_Demo.Designer.cs">
+      <DependentUpon>Go_To_Page_Open_Action_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Go_To_Page_Open_Action_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Go_To_Page_Open_Action_Description.Designer.cs">
+      <DependentUpon>Go_To_Page_Open_Action_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Go_To_Page_Open_Action_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Actions\Go_To_Page_Open_Action_Sample_Code.Designer.cs">
+      <DependentUpon>Go_To_Page_Open_Action_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Color_Spaces\Create_GrayScale_CMYK_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Color_Spaces\Create_GrayScale_CMYK_Demo.Designer.cs">
+      <DependentUpon>Create_GrayScale_CMYK_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Color_Spaces\Create_GrayScale_CMYK_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Color_Spaces\Create_GrayScale_CMYK_Description.Designer.cs">
+      <DependentUpon>Create_GrayScale_CMYK_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Color_Spaces\Create_GrayScale_CMYK_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Color_Spaces\Create_GrayScale_CMYK_Sample_Code.Designer.cs">
+      <DependentUpon>Create_GrayScale_CMYK_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Define_in_HTML_PDF_Form_Fields_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Define_in_HTML_PDF_Form_Fields_Demo.Designer.cs">
+      <DependentUpon>Define_in_HTML_PDF_Form_Fields_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Define_in_HTML_PDF_Form_Fields_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Define_in_HTML_PDF_Form_Fields_Description.Designer.cs">
+      <DependentUpon>Define_in_HTML_PDF_Form_Fields_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Define_in_HTML_PDF_Form_Fields_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Define_in_HTML_PDF_Form_Fields_Sample_Code.Designer.cs">
+      <DependentUpon>Define_in_HTML_PDF_Form_Fields_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_in_Background_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_in_Background_Demo.Designer.cs">
+      <DependentUpon>Add_Elements_in_Background_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_in_Background_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_in_Background_Description.Designer.cs">
+      <DependentUpon>Add_Elements_in_Background_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_in_Background_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_in_Background_Sample_Code.Designer.cs">
+      <DependentUpon>Add_Elements_in_Background_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_Over_Main_Content_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_Over_Main_Content_Demo.Designer.cs">
+      <DependentUpon>Add_Elements_Over_Main_Content_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_Over_Main_Content_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_Over_Main_Content_Description.Designer.cs">
+      <DependentUpon>Add_Elements_Over_Main_Content_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_Over_Main_Content_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_Over_Main_Content_Sample_Code.Designer.cs">
+      <DependentUpon>Add_Elements_Over_Main_Content_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\Digital_Signatures_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\Digital_Signatures_Demo.Designer.cs">
+      <DependentUpon>Digital_Signatures_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\Digital_Signatures_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\Digital_Signatures_Description.Designer.cs">
+      <DependentUpon>Digital_Signatures_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\Digital_Signatures_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\Digital_Signatures_Sample_Code.Designer.cs">
+      <DependentUpon>Digital_Signatures_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\PDF_Permissions_and_Password_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\PDF_Permissions_and_Password_Demo.Designer.cs">
+      <DependentUpon>PDF_Permissions_and_Password_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\PDF_Permissions_and_Password_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\PDF_Permissions_and_Password_Description.Designer.cs">
+      <DependentUpon>PDF_Permissions_and_Password_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\PDF_Permissions_and_Password_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Security\PDF_Permissions_and_Password_Sample_Code.Designer.cs">
+      <DependentUpon>PDF_Permissions_and_Password_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Standards\Create_PDF_A_and_PDF_X_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Standards\Create_PDF_A_and_PDF_X_Demo.Designer.cs">
+      <DependentUpon>Create_PDF_A_and_PDF_X_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Standards\Create_PDF_A_and_PDF_X_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Standards\Create_PDF_A_and_PDF_X_Description.Designer.cs">
+      <DependentUpon>Create_PDF_A_and_PDF_X_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Standards\Create_PDF_A_and_PDF_X_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Standards\Create_PDF_A_and_PDF_X_Sample_Code.Designer.cs">
+      <DependentUpon>Create_PDF_A_and_PDF_X_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Demo.Designer.cs">
+      <DependentUpon>Set_Initial_Zoom_Level_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Description.Designer.cs">
+      <DependentUpon>Set_Initial_Zoom_Level_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Sample_Code.Designer.cs">
+      <DependentUpon>Set_Initial_Zoom_Level_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Viewer_Preferences_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Viewer_Preferences_Demo.Designer.cs">
+      <DependentUpon>Set_Viewer_Preferences_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Viewer_Preferences_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Viewer_Preferences_Description.Designer.cs">
+      <DependentUpon>Set_Viewer_Preferences_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Viewer_Preferences_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Viewer_Preferences_Sample_Code.Designer.cs">
+      <DependentUpon>Set_Viewer_Preferences_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Auto_Create_Table_of_Contents_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Auto_Create_Table_of_Contents_Demo.Designer.cs">
+      <DependentUpon>Auto_Create_Table_of_Contents_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Auto_Create_Table_of_Contents_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Auto_Create_Table_of_Contents_Description.Designer.cs">
+      <DependentUpon>Auto_Create_Table_of_Contents_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Auto_Create_Table_of_Contents_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Auto_Create_Table_of_Contents_Sample_Code.Designer.cs">
+      <DependentUpon>Auto_Create_Table_of_Contents_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Getting_Started_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Getting_Started_Sample_Code.Designer.cs">
+      <DependentUpon>Getting_Started_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Getting_Started_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Getting_Started_Demo.Designer.cs">
+      <DependentUpon>Getting_Started_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Getting_Started_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Getting_Started_Description.Designer.cs">
+      <DependentUpon>Getting_Started_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Auto_Resize_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Auto_Resize_Demo.Designer.cs">
+      <DependentUpon>Header_Footer_Auto_Resize_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Auto_Resize_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Auto_Resize_Description.Designer.cs">
+      <DependentUpon>Header_Footer_Auto_Resize_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Auto_Resize_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Auto_Resize_Sample_Code.Designer.cs">
+      <DependentUpon>Header_Footer_Auto_Resize_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Change_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Change_Demo.Designer.cs">
+      <DependentUpon>Header_Footer_Change_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Change_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Change_Description.Designer.cs">
+      <DependentUpon>Header_Footer_Change_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Change_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Change_Sample_Code.Designer.cs">
+      <DependentUpon>Header_Footer_Change_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_In_External_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_In_External_PDF_Demo.Designer.cs">
+      <DependentUpon>Header_Footer_In_External_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_In_External_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_In_External_PDF_Description.Designer.cs">
+      <DependentUpon>Header_Footer_In_External_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_In_External_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_In_External_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Header_Footer_In_External_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_on_Merged_HTML_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_on_Merged_HTML_Demo.Designer.cs">
+      <DependentUpon>Header_Footer_on_Merged_HTML_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_on_Merged_HTML_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_on_Merged_HTML_Description.Designer.cs">
+      <DependentUpon>Header_Footer_on_Merged_HTML_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_on_Merged_HTML_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_on_Merged_HTML_Sample_Code.Designer.cs">
+      <DependentUpon>Header_Footer_on_Merged_HTML_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Content_Scaling_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Content_Scaling_Demo.Designer.cs">
+      <DependentUpon>HTML_Content_Scaling_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Content_Scaling_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Content_Scaling_Description.Designer.cs">
+      <DependentUpon>HTML_Content_Scaling_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Content_Scaling_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\HTML_Content_Scaling_Sample_Code.Designer.cs">
+      <DependentUpon>HTML_Content_Scaling_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\HTML_in_Header_Footer_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\HTML_in_Header_Footer_Sample_Code.Designer.cs">
+      <DependentUpon>HTML_in_Header_Footer_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\HTML_in_Header_Footer_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\HTML_in_Header_Footer_Demo.Designer.cs">
+      <DependentUpon>HTML_in_Header_Footer_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\HTML_in_Header_Footer_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\HTML_in_Header_Footer_Description.Designer.cs">
+      <DependentUpon>HTML_in_Header_Footer_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Media_Types\Select_Screen_or_Print_Media_Type_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Media_Types\Select_Screen_or_Print_Media_Type_Demo.Designer.cs">
+      <DependentUpon>Select_Screen_or_Print_Media_Type_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Media_Types\Select_Screen_or_Print_Media_Type_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Media_Types\Select_Screen_or_Print_Media_Type_Description.Designer.cs">
+      <DependentUpon>Select_Screen_or_Print_Media_Type_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Media_Types\Select_Screen_or_Print_Media_Type_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Media_Types\Select_Screen_or_Print_Media_Type_Sample_Code.Designer.cs">
+      <DependentUpon>Select_Screen_or_Print_Media_Type_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_With_Existing_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_With_Existing_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Merge_With_Existing_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_Multiple_HTML_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_Multiple_HTML_Demo.Designer.cs">
+      <DependentUpon>Merge_Multiple_HTML_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_Multiple_HTML_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_Multiple_HTML_Description.Designer.cs">
+      <DependentUpon>Merge_Multiple_HTML_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_Multiple_HTML_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_Multiple_HTML_Sample_Code.Designer.cs">
+      <DependentUpon>Merge_Multiple_HTML_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_With_Existing_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_With_Existing_PDF_Demo.Designer.cs">
+      <DependentUpon>Merge_With_Existing_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_With_Existing_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Merge_With_Existing_PDF_Description.Designer.cs">
+      <DependentUpon>Merge_With_Existing_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Page_Numbers_in_HTML_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Page_Numbers_in_HTML_Demo.Designer.cs">
+      <DependentUpon>Page_Numbers_in_HTML_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Page_Numbers_in_HTML_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Page_Numbers_in_HTML_Description.Designer.cs">
+      <DependentUpon>Page_Numbers_in_HTML_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Page_Numbers_in_HTML_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Headers_and_Footers\Page_Numbers_in_HTML_Sample_Code.Designer.cs">
+      <DependentUpon>Page_Numbers_in_HTML_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Demo.Designer.cs">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Description.Designer.cs">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Sample_Code.Designer.cs">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_Images_Using_API_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_Images_Using_API_Demo.Designer.cs">
+      <DependentUpon>Avoid_Page_Breaks_Inside_Images_Using_API_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_Images_Using_API_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_Images_Using_API_Description.Designer.cs">
+      <DependentUpon>Avoid_Page_Breaks_Inside_Images_Using_API_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_Images_Using_API_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_Images_Using_API_Sample_Code.Designer.cs">
+      <DependentUpon>Avoid_Page_Breaks_Inside_Images_Using_API_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_CSS_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_CSS_Demo.Designer.cs">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_CSS_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_CSS_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_CSS_Description.Designer.cs">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_CSS_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_CSS_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_CSS_Sample_Code.Designer.cs">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_CSS_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Partially_Convert_HTML_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Partially_Convert_HTML_Demo.Designer.cs">
+      <DependentUpon>Partially_Convert_HTML_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Partially_Convert_HTML_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Partially_Convert_HTML_Description.Designer.cs">
+      <DependentUpon>Partially_Convert_HTML_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Partially_Convert_HTML_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Partially_Convert_HTML_Sample_Code.Designer.cs">
+      <DependentUpon>Partially_Convert_HTML_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Auto_Create_PDF_Forms_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Auto_Create_PDF_Forms_Demo.Designer.cs">
+      <DependentUpon>Auto_Create_PDF_Forms_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Auto_Create_PDF_Forms_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Auto_Create_PDF_Forms_Description.Designer.cs">
+      <DependentUpon>Auto_Create_PDF_Forms_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Auto_Create_PDF_Forms_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\PDF_Forms\Auto_Create_PDF_Forms_Sample_Code.Designer.cs">
+      <DependentUpon>Auto_Create_PDF_Forms_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Repeat_HTML_Table_Header_Footer_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Repeat_HTML_Table_Header_Footer_Demo.Designer.cs">
+      <DependentUpon>Repeat_HTML_Table_Header_Footer_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Repeat_HTML_Table_Header_Footer_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Repeat_HTML_Table_Header_Footer_Description.Designer.cs">
+      <DependentUpon>Repeat_HTML_Table_Header_Footer_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Repeat_HTML_Table_Header_Footer_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Repeat_HTML_Table_Header_Footer_Sample_Code.Designer.cs">
+      <DependentUpon>Repeat_HTML_Table_Header_Footer_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Define_in_HTML_Table_of_Contents_Items_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Define_in_HTML_Table_of_Contents_Items_Demo.Designer.cs">
+      <DependentUpon>Define_in_HTML_Table_of_Contents_Items_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Define_in_HTML_Table_of_Contents_Items_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Define_in_HTML_Table_of_Contents_Items_Description.Designer.cs">
+      <DependentUpon>Define_in_HTML_Table_of_Contents_Items_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Define_in_HTML_Table_of_Contents_Items_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Define_in_HTML_Table_of_Contents_Items_Sample_Code.Designer.cs">
+      <DependentUpon>Define_in_HTML_Table_of_Contents_Items_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Insert_PDF_Pages_Before_Table_of_Contents_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Insert_PDF_Pages_Before_Table_of_Contents_Demo.Designer.cs">
+      <DependentUpon>Insert_PDF_Pages_Before_Table_of_Contents_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Insert_PDF_Pages_Before_Table_of_Contents_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Insert_PDF_Pages_Before_Table_of_Contents_Description.Designer.cs">
+      <DependentUpon>Insert_PDF_Pages_Before_Table_of_Contents_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Insert_PDF_Pages_Before_Table_of_Contents_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Insert_PDF_Pages_Before_Table_of_Contents_Sample_Code.Designer.cs">
+      <DependentUpon>Insert_PDF_Pages_Before_Table_of_Contents_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Merge_Table_of_Contents_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Merge_Table_of_Contents_Demo.Designer.cs">
+      <DependentUpon>Merge_Table_of_Contents_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Merge_Table_of_Contents_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Merge_Table_of_Contents_Description.Designer.cs">
+      <DependentUpon>Merge_Table_of_Contents_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Merge_Table_of_Contents_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Table_of_Contents\Merge_Table_of_Contents_Sample_Code.Designer.cs">
+      <DependentUpon>Merge_Table_of_Contents_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Text_Notes\Create_Text_Notes_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Text_Notes\Create_Text_Notes_Demo.Designer.cs">
+      <DependentUpon>Create_Text_Notes_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Text_Notes\Create_Text_Notes_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Text_Notes\Create_Text_Notes_Description.Designer.cs">
+      <DependentUpon>Create_Text_Notes_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Text_Notes\Create_Text_Notes_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Text_Notes\Create_Text_Notes_Sample_Code.Designer.cs">
+      <DependentUpon>Create_Text_Notes_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Triggering_Modes\Conversion_Triggering_Modes_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Triggering_Modes\Conversion_Triggering_Modes_Demo.Designer.cs">
+      <DependentUpon>Conversion_Triggering_Modes_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Triggering_Modes\Conversion_Triggering_Modes_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Triggering_Modes\Conversion_Triggering_Modes_Description.Designer.cs">
+      <DependentUpon>Conversion_Triggering_Modes_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Triggering_Modes\Conversion_Triggering_Modes_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Triggering_Modes\Conversion_Triggering_Modes_Sample_Code.Designer.cs">
+      <DependentUpon>Conversion_Triggering_Modes_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Convert_URI_Links_to_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Convert_URI_Links_to_PDF_Demo.Designer.cs">
+      <DependentUpon>Convert_URI_Links_to_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Convert_URI_Links_to_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Convert_URI_Links_to_PDF_Description.Designer.cs">
+      <DependentUpon>Convert_URI_Links_to_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Convert_URI_Links_to_PDF_Samples_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Convert_URI_Links_to_PDF_Samples_Code.Designer.cs">
+      <DependentUpon>Convert_URI_Links_to_PDF_Samples_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Define_Custom_URI_Links_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Define_Custom_URI_Links_Demo.Designer.cs">
+      <DependentUpon>Define_Custom_URI_Links_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Define_Custom_URI_Links_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Define_Custom_URI_Links_Description.Designer.cs">
+      <DependentUpon>Define_Custom_URI_Links_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Define_Custom_URI_Links_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\URI_Links\Define_Custom_URI_Links_Sample_Code.Designer.cs">
+      <DependentUpon>Define_Custom_URI_Links_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Watermarks_Stamps\Add_Watermarks_Stamps_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Watermarks_Stamps\Add_Watermarks_Stamps_Demo.Designer.cs">
+      <DependentUpon>Add_Watermarks_Stamps_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Watermarks_Stamps\Add_Watermarks_Stamps_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Watermarks_Stamps\Add_Watermarks_Stamps_Description.Designer.cs">
+      <DependentUpon>Add_Watermarks_Stamps_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Watermarks_Stamps\Add_Watermarks_Stamps_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HTML_to_PDF\Watermarks_Stamps\Add_Watermarks_Stamps_Sample_Code.Designer.cs">
+      <DependentUpon>Add_Watermarks_Stamps_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Bookmarks_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Bookmarks_Demo.Designer.cs">
+      <DependentUpon>Bookmarks_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Bookmarks_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Bookmarks_Description.Designer.cs">
+      <DependentUpon>Bookmarks_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Bookmarks_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Bookmarks_Sample_Code.Designer.cs">
+      <DependentUpon>Bookmarks_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Create_PDF_Documents_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Create_PDF_Documents_Demo.Designer.cs">
+      <DependentUpon>Create_PDF_Documents_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Create_PDF_Documents_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Create_PDF_Documents_Description.Designer.cs">
+      <DependentUpon>Create_PDF_Documents_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Create_PDF_Documents_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Create_PDF_Documents_Sample_Code.Designer.cs">
+      <DependentUpon>Create_PDF_Documents_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Attachments_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Attachments_Demo.Designer.cs">
+      <DependentUpon>File_Attachments_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Attachments_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Attachments_Description.Designer.cs">
+      <DependentUpon>File_Attachments_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Attachments_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Attachments_Sample_Code.Designer.cs">
+      <DependentUpon>File_Attachments_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Links_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Links_Demo.Designer.cs">
+      <DependentUpon>File_Links_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Links_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Links_Description.Designer.cs">
+      <DependentUpon>File_Links_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Links_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\File_Links_Sample_Code.Designer.cs">
+      <DependentUpon>File_Links_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Graphic_Elements_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Graphic_Elements_Demo.Designer.cs">
+      <DependentUpon>Graphic_Elements_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Graphic_Elements_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Graphic_Elements_Description.Designer.cs">
+      <DependentUpon>Graphic_Elements_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Graphic_Elements_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Graphic_Elements_Sample_Code.Designer.cs">
+      <DependentUpon>Graphic_Elements_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Auto_Resize_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Auto_Resize_Sample_Code.Designer.cs">
+      <DependentUpon>Header_Footer_Auto_Resize_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Auto_Resize_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Auto_Resize_Description.Designer.cs">
+      <DependentUpon>Header_Footer_Auto_Resize_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Auto_Resize_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Auto_Resize_Demo.Designer.cs">
+      <DependentUpon>Header_Footer_Auto_Resize_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Change_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Change_Demo.Designer.cs">
+      <DependentUpon>Header_Footer_Change_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Change_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Change_Description.Designer.cs">
+      <DependentUpon>Header_Footer_Change_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Change_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_Change_Sample_Code.Designer.cs">
+      <DependentUpon>Header_Footer_Change_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_In_External_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_In_External_PDF_Demo.Designer.cs">
+      <DependentUpon>Header_Footer_In_External_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_In_External_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_In_External_PDF_Description.Designer.cs">
+      <DependentUpon>Header_Footer_In_External_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_In_External_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Header_Footer_In_External_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Header_Footer_In_External_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\HTML_in_Header_Footer_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\HTML_in_Header_Footer_Demo.Designer.cs">
+      <DependentUpon>HTML_in_Header_Footer_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\HTML_in_Header_Footer_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\HTML_in_Header_Footer_Description.Designer.cs">
+      <DependentUpon>HTML_in_Header_Footer_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\HTML_in_Header_Footer_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\HTML_in_Header_Footer_Sample_Code.Designer.cs">
+      <DependentUpon>HTML_in_Header_Footer_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Page_Numbers_in_HTML_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Page_Numbers_in_HTML_Demo.Designer.cs">
+      <DependentUpon>Page_Numbers_in_HTML_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Page_Numbers_in_HTML_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Page_Numbers_in_HTML_Description.Designer.cs">
+      <DependentUpon>Page_Numbers_in_HTML_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Page_Numbers_in_HTML_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Headers_and_Footers\Page_Numbers_in_HTML_Sample_Code.Designer.cs">
+      <DependentUpon>Page_Numbers_in_HTML_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_Image_Elements_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_Image_Elements_Demo.Designer.cs">
+      <DependentUpon>HTML_to_Image_Elements_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_Image_Elements_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_Image_Elements_Description.Designer.cs">
+      <DependentUpon>HTML_to_Image_Elements_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_Image_Elements_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_Image_Elements_Sample_Code.Designer.cs">
+      <DependentUpon>HTML_to_Image_Elements_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_PDF_Elements_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_PDF_Elements_Demo.Designer.cs">
+      <DependentUpon>HTML_to_PDF_Elements_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_PDF_Elements_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_PDF_Elements_Description.Designer.cs">
+      <DependentUpon>HTML_to_PDF_Elements_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_PDF_Elements_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\HTML_to_PDF_Elements_Sample_Code.Designer.cs">
+      <DependentUpon>HTML_to_PDF_Elements_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Image_Elements_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Image_Elements_Demo.Designer.cs">
+      <DependentUpon>Image_Elements_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Image_Elements_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Image_Elements_Description.Designer.cs">
+      <DependentUpon>Image_Elements_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Image_Elements_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Image_Elements_Sample_Code.Designer.cs">
+      <DependentUpon>Image_Elements_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Internal_Links_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Internal_Links_Demo.Designer.cs">
+      <DependentUpon>Internal_Links_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Internal_Links_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Internal_Links_Description.Designer.cs">
+      <DependentUpon>Internal_Links_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Internal_Links_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Internal_Links_Sample_Code.Designer.cs">
+      <DependentUpon>Internal_Links_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Button_Clicked_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Button_Clicked_Demo.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Button_Clicked_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Button_Clicked_Description.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Button_Clicked_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Button_Clicked_Sample_Code.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Open_Action_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Open_Action_Demo.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Open_Action_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Open_Action_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Open_Action_Description.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Open_Action_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Open_Action_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Open_Action_Sample_Code.Designer.cs">
+      <DependentUpon>Execute_JavaScript_Open_Action_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Go_To_Page_Open_Action_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Go_To_Page_Open_Action_Demo.Designer.cs">
+      <DependentUpon>Go_To_Page_Open_Action_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Go_To_Page_Open_Action_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Go_To_Page_Open_Action_Description.Designer.cs">
+      <DependentUpon>Go_To_Page_Open_Action_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Go_To_Page_Open_Action_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Actions\Go_To_Page_Open_Action_Sample_Code.Designer.cs">
+      <DependentUpon>Go_To_Page_Open_Action_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Forms_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Forms_Demo.Designer.cs">
+      <DependentUpon>PDF_Forms_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Forms_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Forms_Description.Designer.cs">
+      <DependentUpon>PDF_Forms_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Forms_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Forms_Sample_Code.Designer.cs">
+      <DependentUpon>PDF_Forms_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\Digital_Signatures_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\Digital_Signatures_Demo.Designer.cs">
+      <DependentUpon>Digital_Signatures_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\Digital_Signatures_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\Digital_Signatures_Description.Designer.cs">
+      <DependentUpon>Digital_Signatures_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\Digital_Signatures_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\Digital_Signatures_Sample_Code.Designer.cs">
+      <DependentUpon>Digital_Signatures_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\PDF_Permissions_and_Password_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\PDF_Permissions_and_Password_Demo.Designer.cs">
+      <DependentUpon>PDF_Permissions_and_Password_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\PDF_Permissions_and_Password_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\PDF_Permissions_and_Password_Description.Designer.cs">
+      <DependentUpon>PDF_Permissions_and_Password_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\PDF_Permissions_and_Password_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Security\PDF_Permissions_and_Password_Sample_Code.Designer.cs">
+      <DependentUpon>PDF_Permissions_and_Password_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Demo.Designer.cs">
+      <DependentUpon>Set_Initial_Zoom_Level_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Description.Designer.cs">
+      <DependentUpon>Set_Initial_Zoom_Level_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Sample_Code.Designer.cs">
+      <DependentUpon>Set_Initial_Zoom_Level_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Viewer_Preferences_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Viewer_Preferences_Demo.Designer.cs">
+      <DependentUpon>Set_Viewer_Preferences_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Viewer_Preferences_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Viewer_Preferences_Description.Designer.cs">
+      <DependentUpon>Set_Viewer_Preferences_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Viewer_Preferences_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\PDF_Viewer_Preferences\Set_Viewer_Preferences_Sample_Code.Designer.cs">
+      <DependentUpon>Set_Viewer_Preferences_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Elements_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Elements_Demo.Designer.cs">
+      <DependentUpon>Text_Elements_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Elements_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Elements_Description.Designer.cs">
+      <DependentUpon>Text_Elements_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Elements_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Elements_Sample_Code.Designer.cs">
+      <DependentUpon>Text_Elements_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Notes_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Notes_Demo.Designer.cs">
+      <DependentUpon>Text_Notes_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Notes_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Notes_Description.Designer.cs">
+      <DependentUpon>Text_Notes_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Notes_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\Text_Notes_Sample_Code.Designer.cs">
+      <DependentUpon>Text_Notes_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\URI_Links_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\URI_Links_Demo.Designer.cs">
+      <DependentUpon>URI_Links_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\URI_Links_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\URI_Links_Description.Designer.cs">
+      <DependentUpon>URI_Links_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Creator\URI_Links_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Creator\URI_Links_Sample_Code.Designer.cs">
+      <DependentUpon>URI_Links_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Fill_PDF_Forms_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Fill_PDF_Forms_Demo.Designer.cs">
+      <DependentUpon>Fill_PDF_Forms_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Fill_PDF_Forms_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Fill_PDF_Forms_Description.Designer.cs">
+      <DependentUpon>Fill_PDF_Forms_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Fill_PDF_Forms_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Fill_PDF_Forms_Sample_Code.Designer.cs">
+      <DependentUpon>Fill_PDF_Forms_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Merge_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Merge_PDF_Demo.Designer.cs">
+      <DependentUpon>Merge_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Merge_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Merge_PDF_Description.Designer.cs">
+      <DependentUpon>Merge_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Merge_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Merge_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Merge_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Split_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Split_PDF_Demo.Designer.cs">
+      <DependentUpon>Split_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Split_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Split_PDF_Description.Designer.cs">
+      <DependentUpon>Split_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Split_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Split_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Split_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Stamp_PDF_Demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Stamp_PDF_Demo.Designer.cs">
+      <DependentUpon>Stamp_PDF_Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Stamp_PDF_Description.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Stamp_PDF_Description.Designer.cs">
+      <DependentUpon>Stamp_PDF_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_Editor\Stamp_PDF_Sample_Code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PDF_Editor\Stamp_PDF_Sample_Code.Designer.cs">
+      <DependentUpon>Stamp_PDF_Sample_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DemoForm.resx">
+      <DependentUpon>DemoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_Image\HTML_to_Image_Demo.resx">
+      <DependentUpon>HTML_to_Image_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_Image\HTML_to_Image_Description.resx">
+      <DependentUpon>HTML_to_Image_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_Image\HTML_to_Image_Sample_Code.resx">
+      <DependentUpon>HTML_to_Image_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_Image\HTML_to_SVG_Demo.resx">
+      <DependentUpon>HTML_to_SVG_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_Image\HTML_to_SVG_Description.resx">
+      <DependentUpon>HTML_to_SVG_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_Image\HTML_to_SVG_Sample_Code.resx">
+      <DependentUpon>HTML_to_SVG_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Bookmarks\Auto_Create_Bookmarks_Demo.resx">
+      <DependentUpon>Auto_Create_Bookmarks_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Bookmarks\Auto_Create_Bookmarks_Description.resx">
+      <DependentUpon>Auto_Create_Bookmarks_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Bookmarks\Auto_Create_Bookmarks_Sample_Code.resx">
+      <DependentUpon>Auto_Create_Bookmarks_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Bookmarks\Select_in_API_HTML_Elements_to_Bookmark_Demo.resx">
+      <DependentUpon>Select_in_API_HTML_Elements_to_Bookmark_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Bookmarks\Select_in_API_HTML_Elements_to_Bookmark_Description.resx">
+      <DependentUpon>Select_in_API_HTML_Elements_to_Bookmark_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Bookmarks\Select_in_API_HTML_Elements_to_Bookmark_Sample_Code.resx">
+      <DependentUpon>Select_in_API_HTML_Elements_to_Bookmark_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Bookmarks\Select_in_HTML_Elements_to_Bookmark_Description.resx">
+      <DependentUpon>Select_in_HTML_Elements_to_Bookmark_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Bookmarks\Select_in_HTML_Elements_to_Bookmark_Demo.resx">
+      <DependentUpon>Select_in_HTML_Elements_to_Bookmark_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Bookmarks\Select_in_HTML_Elements_to_Bookmark_Sample_Code.resx">
+      <DependentUpon>Select_in_HTML_Elements_to_Bookmark_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\File_Links_Attachments\Create_File_Links_and_Atachments_Demo.resx">
+      <DependentUpon>Create_File_Links_and_Atachments_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\File_Links_Attachments\Create_File_Links_and_Atachments_Description.resx">
+      <DependentUpon>Create_File_Links_and_Atachments_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\File_Links_Attachments\Create_File_Links_and_Atachments_Sample_Code.resx">
+      <DependentUpon>Create_File_Links_and_Atachments_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Flash_and_Extensions\Convert_HTML_with_Flash_to_PDF_Sample_Code.resx">
+      <DependentUpon>Convert_HTML_with_Flash_to_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Flash_and_Extensions\Convert_HTML_with_Flash_to_PDF_Description.resx">
+      <DependentUpon>Convert_HTML_with_Flash_to_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Flash_and_Extensions\Convert_HTML_with_Flash_to_PDF_Demo.resx">
+      <DependentUpon>Convert_HTML_with_Flash_to_PDF_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Fonts_Embedding\Embed_Fonts_in_PDF_Demo.resx">
+      <DependentUpon>Embed_Fonts_in_PDF_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Fonts_Embedding\Embed_Fonts_in_PDF_Description.resx">
+      <DependentUpon>Embed_Fonts_in_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Fonts_Embedding\Embed_Fonts_in_PDF_Sample_Code.resx">
+      <DependentUpon>Embed_Fonts_in_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML5_Features\SVG_to_PDF_Demo.resx">
+      <DependentUpon>SVG_to_PDF_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML5_Features\SVG_to_PDF_Description.resx">
+      <DependentUpon>SVG_to_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML5_Features\SVG_to_PDF_Sample_Code.resx">
+      <DependentUpon>SVG_to_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML5_Features\Web_Fonts_to_PDF_Demo.resx">
+      <DependentUpon>Web_Fonts_to_PDF_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML5_Features\Web_Fonts_to_PDF_Description.resx">
+      <DependentUpon>Web_Fonts_to_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML5_Features\Web_Fonts_to_PDF_Sample_Code.resx">
+      <DependentUpon>Web_Fonts_to_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Location\Select_in_API_Elements_to_Retrieve_Demo.resx">
+      <DependentUpon>Select_in_API_Elements_to_Retrieve_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Location\Select_in_API_Elements_to_Retrieve_Description.resx">
+      <DependentUpon>Select_in_API_Elements_to_Retrieve_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Location\Select_in_API_Elements_to_Retrieve_Sample_Code.resx">
+      <DependentUpon>Select_in_API_Elements_to_Retrieve_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Location\Select_in_HTML_Elements_to_Retrieve_Demo.resx">
+      <DependentUpon>Select_in_HTML_Elements_to_Retrieve_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Location\Select_in_HTML_Elements_to_Retrieve_Description.resx">
+      <DependentUpon>Select_in_HTML_Elements_to_Retrieve_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Location\Select_in_HTML_Elements_to_Retrieve_Sample_Code.resx">
+      <DependentUpon>Select_in_HTML_Elements_to_Retrieve_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_API_Elements_to_Hide_Demo.resx">
+      <DependentUpon>Select_in_API_Elements_to_Hide_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_API_Elements_to_Hide_Description.resx">
+      <DependentUpon>Select_in_API_Elements_to_Hide_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_API_Elements_to_Hide_Sample_Code.resx">
+      <DependentUpon>Select_in_API_Elements_to_Hide_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_HTML_Elements_to_Hide_Demo.resx">
+      <DependentUpon>Select_in_HTML_Elements_to_Hide_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_HTML_Elements_to_Hide_Description.resx">
+      <DependentUpon>Select_in_HTML_Elements_to_Hide_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Elements_Visibility\Select_in_HTML_Elements_to_Hide_Sample_Code.resx">
+      <DependentUpon>Select_in_HTML_Elements_to_Hide_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_to_Image_Elements\Add_HTML_to_Image_Elements_to_PDF_Demo.resx">
+      <DependentUpon>Add_HTML_to_Image_Elements_to_PDF_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_to_Image_Elements\Add_HTML_to_Image_Elements_to_PDF_Description.resx">
+      <DependentUpon>Add_HTML_to_Image_Elements_to_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_to_Image_Elements\Add_HTML_to_Image_Elements_to_PDF_Sample_Code.resx">
+      <DependentUpon>Add_HTML_to_Image_Elements_to_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_to_PDF_Elements\Add_HTML_to_PDF_Elements_to_PDF_Sample_Code.resx">
+      <DependentUpon>Add_HTML_to_PDF_Elements_to_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_to_PDF_Elements\Add_HTML_to_PDF_Elements_to_PDF_Description.resx">
+      <DependentUpon>Add_HTML_to_PDF_Elements_to_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_to_PDF_Elements\Add_HTML_to_PDF_Elements_to_PDF_Demo.resx">
+      <DependentUpon>Add_HTML_to_PDF_Elements_to_PDF_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_GET_and_POST\GET_and_POST_HTTP_Methods_Demo.resx">
+      <DependentUpon>GET_and_POST_HTTP_Methods_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_GET_and_POST\GET_and_POST_HTTP_Methods_Description.resx">
+      <DependentUpon>GET_and_POST_HTTP_Methods_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_GET_and_POST\GET_and_POST_HTTP_Methods_Sample_Code.resx">
+      <DependentUpon>GET_and_POST_HTTP_Methods_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_GET_and_POST\Proxy_Options_Demo.resx">
+      <DependentUpon>Proxy_Options_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_GET_and_POST\Proxy_Options_Description.resx">
+      <DependentUpon>Proxy_Options_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_GET_and_POST\Proxy_Options_Sample_Code.resx">
+      <DependentUpon>Proxy_Options_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_Cookies_to_Request_Demo.resx">
+      <DependentUpon>Add_Cookies_to_Request_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_Cookies_to_Request_Description.resx">
+      <DependentUpon>Add_Cookies_to_Request_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_Cookies_to_Request_Sample_Code.resx">
+      <DependentUpon>Add_Cookies_to_Request_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_HTTP_Headers_to_Request_demo.resx">
+      <DependentUpon>Add_HTTP_Headers_to_Request_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_HTTP_Headers_to_Request_Description.resx">
+      <DependentUpon>Add_HTTP_Headers_to_Request_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTTP_Headers_and_Cookies\Add_HTTP_Headers_to_Request_Sample_Code.resx">
+      <DependentUpon>Add_HTTP_Headers_to_Request_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Images_Quality\Images_Scaling_and JPEG_Compression_Demo.resx">
+      <DependentUpon>Images_Scaling_and JPEG_Compression_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Images_Quality\Images_Scaling_and JPEG_Compression_Description.resx">
+      <DependentUpon>Images_Scaling_and JPEG_Compression_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Images_Quality\Images_Scaling_and JPEG_Compression_Sample_Code.resx">
+      <DependentUpon>Images_Scaling_and JPEG_Compression_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Images_Quality\Replace_with_Higher_Quality_Images_Demo.resx">
+      <DependentUpon>Replace_with_Higher_Quality_Images_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Images_Quality\Replace_with_Higher_Quality_Images_Description.resx">
+      <DependentUpon>Replace_with_Higher_Quality_Images_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Images_Quality\Replace_with_Higher_Quality_Images_Sample_Code.resx">
+      <DependentUpon>Replace_with_Higher_Quality_Images_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Internal_Links\Convert_Internal_Links_to_PDF_Demo.resx">
+      <DependentUpon>Convert_Internal_Links_to_PDF_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Internal_Links\Convert_Internal_Links_to_PDF_Description.resx">
+      <DependentUpon>Convert_Internal_Links_to_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Internal_Links\Convert_Internal_Links_to_PDF_Sample_Code.resx">
+      <DependentUpon>Convert_Internal_Links_to_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Internal_Links\Define_Custom_Internal_Links_Demo.resx">
+      <DependentUpon>Define_Custom_Internal_Links_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Internal_Links\Define_Custom_Internal_Links_Description.resx">
+      <DependentUpon>Define_Custom_Internal_Links_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Internal_Links\Define_Custom_Internal_Links_Sample_Code.resx">
+      <DependentUpon>Define_Custom_Internal_Links_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Demo.resx">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Description.resx">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Sample_Code.resx">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_API_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_API_Demo.resx">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_API_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_API_Description.resx">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_API_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_API_Sample_Code.resx">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_API_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Button_Clicked_Demo.resx">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Button_Clicked_Description.resx">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Button_Clicked_Sample_Code.resx">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Open_Action_Demo.resx">
+      <DependentUpon>Execute_JavaScript_Open_Action_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Open_Action_Description.resx">
+      <DependentUpon>Execute_JavaScript_Open_Action_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Actions\Execute_JavaScript_Open_Action_Sample_Code.resx">
+      <DependentUpon>Execute_JavaScript_Open_Action_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Actions\Go_To_Page_Open_Action_Demo.resx">
+      <DependentUpon>Go_To_Page_Open_Action_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Actions\Go_To_Page_Open_Action_Description.resx">
+      <DependentUpon>Go_To_Page_Open_Action_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Actions\Go_To_Page_Open_Action_Sample_Code.resx">
+      <DependentUpon>Go_To_Page_Open_Action_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Color_Spaces\Create_GrayScale_CMYK_Demo.resx">
+      <DependentUpon>Create_GrayScale_CMYK_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Color_Spaces\Create_GrayScale_CMYK_Description.resx">
+      <DependentUpon>Create_GrayScale_CMYK_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Color_Spaces\Create_GrayScale_CMYK_Sample_Code.resx">
+      <DependentUpon>Create_GrayScale_CMYK_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Forms\Define_in_HTML_PDF_Form_Fields_Demo.resx">
+      <DependentUpon>Define_in_HTML_PDF_Form_Fields_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Forms\Define_in_HTML_PDF_Form_Fields_Description.resx">
+      <DependentUpon>Define_in_HTML_PDF_Form_Fields_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Forms\Define_in_HTML_PDF_Form_Fields_Sample_Code.resx">
+      <DependentUpon>Define_in_HTML_PDF_Form_Fields_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_in_Background_Demo.resx">
+      <DependentUpon>Add_Elements_in_Background_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_in_Background_Description.resx">
+      <DependentUpon>Add_Elements_in_Background_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_in_Background_Sample_Code.resx">
+      <DependentUpon>Add_Elements_in_Background_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_Over_Main_Content_Demo.resx">
+      <DependentUpon>Add_Elements_Over_Main_Content_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_Over_Main_Content_Description.resx">
+      <DependentUpon>Add_Elements_Over_Main_Content_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Pages_Background\Add_Elements_Over_Main_Content_Sample_Code.resx">
+      <DependentUpon>Add_Elements_Over_Main_Content_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Security\Digital_Signatures_Demo.resx">
+      <DependentUpon>Digital_Signatures_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Security\Digital_Signatures_Description.resx">
+      <DependentUpon>Digital_Signatures_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Security\Digital_Signatures_Sample_Code.resx">
+      <DependentUpon>Digital_Signatures_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Security\PDF_Permissions_and_Password_Demo.resx">
+      <DependentUpon>PDF_Permissions_and_Password_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Security\PDF_Permissions_and_Password_Description.resx">
+      <DependentUpon>PDF_Permissions_and_Password_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Security\PDF_Permissions_and_Password_Sample_Code.resx">
+      <DependentUpon>PDF_Permissions_and_Password_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Standards\Create_PDF_A_and_PDF_X_Demo.resx">
+      <DependentUpon>Create_PDF_A_and_PDF_X_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Standards\Create_PDF_A_and_PDF_X_Description.resx">
+      <DependentUpon>Create_PDF_A_and_PDF_X_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Standards\Create_PDF_A_and_PDF_X_Sample_Code.resx">
+      <DependentUpon>Create_PDF_A_and_PDF_X_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Demo.resx">
+      <DependentUpon>Set_Initial_Zoom_Level_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Description.resx">
+      <DependentUpon>Set_Initial_Zoom_Level_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Sample_Code.resx">
+      <DependentUpon>Set_Initial_Zoom_Level_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Viewer_Preferences_Demo.resx">
+      <DependentUpon>Set_Viewer_Preferences_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Viewer_Preferences_Description.resx">
+      <DependentUpon>Set_Viewer_Preferences_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Viewer_Preferences\Set_Viewer_Preferences_Sample_Code.resx">
+      <DependentUpon>Set_Viewer_Preferences_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Auto_Create_Table_of_contents_Demo.resx">
+      <DependentUpon>Auto_Create_Table_of_Contents_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Auto_Create_Table_of_Contents_Description.resx">
+      <DependentUpon>Auto_Create_Table_of_Contents_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Auto_Create_Table_of_Contents_Sample_Code.resx">
+      <DependentUpon>Auto_Create_Table_of_Contents_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Getting_Started_Demo.resx">
+      <DependentUpon>Getting_Started_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Getting_Started_Description.resx">
+      <DependentUpon>Getting_Started_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Getting_Started_Sample_Code.resx">
+      <DependentUpon>Getting_Started_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Auto_Resize_Demo.resx">
+      <DependentUpon>Header_Footer_Auto_Resize_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Auto_Resize_Description.resx">
+      <DependentUpon>Header_Footer_Auto_Resize_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Auto_Resize_Sample_Code.resx">
+      <DependentUpon>Header_Footer_Auto_Resize_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Change_Demo.resx">
+      <DependentUpon>Header_Footer_Change_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Change_Description.resx">
+      <DependentUpon>Header_Footer_Change_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_Change_Sample_Code.resx">
+      <DependentUpon>Header_Footer_Change_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_In_External_PDF_Demo.resx">
+      <DependentUpon>Header_Footer_In_External_PDF_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_In_External_PDF_Description.resx">
+      <DependentUpon>Header_Footer_In_External_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_In_External_PDF_Sample_Code.resx">
+      <DependentUpon>Header_Footer_In_External_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_on_Merged_HTML_Demo.resx">
+      <DependentUpon>Header_Footer_on_Merged_HTML_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_on_Merged_HTML_Description.resx">
+      <DependentUpon>Header_Footer_on_Merged_HTML_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Header_Footer_on_Merged_HTML_Sample_Code.resx">
+      <DependentUpon>Header_Footer_on_Merged_HTML_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Content_Scaling_Demo.resx">
+      <DependentUpon>HTML_Content_Scaling_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Content_Scaling_Description.resx">
+      <DependentUpon>HTML_Content_Scaling_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\HTML_Content_Scaling_Sample_Code.resx">
+      <DependentUpon>HTML_Content_Scaling_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\HTML_in_Header_Footer_Sample_Code.resx">
+      <DependentUpon>HTML_in_Header_Footer_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\HTML_in_Header_Footer_Demo.resx">
+      <DependentUpon>HTML_in_Header_Footer_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\HTML_in_Header_Footer_Description.resx">
+      <DependentUpon>HTML_in_Header_Footer_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Media_Types\Select_Screen_or_Print_Media_Type_Demo.resx">
+      <DependentUpon>Select_Screen_or_Print_Media_Type_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Media_Types\Select_Screen_or_Print_Media_Type_Description.resx">
+      <DependentUpon>Select_Screen_or_Print_Media_Type_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Media_Types\Select_Screen_or_Print_Media_Type_Sample_Code.resx">
+      <DependentUpon>Select_Screen_or_Print_Media_Type_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Merge_Multiple_HTML_Demo.resx">
+      <DependentUpon>Merge_Multiple_HTML_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Merge_Multiple_HTML_Description.resx">
+      <DependentUpon>Merge_Multiple_HTML_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Merge_Multiple_HTML_Sample_Code.resx">
+      <DependentUpon>Merge_Multiple_HTML_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Merge_With_Existing_PDF_Demo.resx">
+      <DependentUpon>Merge_With_Existing_PDF_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Merge_With_Existing_PDF_Description.resx">
+      <DependentUpon>Merge_With_Existing_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Merge_With_Existing_PDF_Sample_Code.resx">
+      <DependentUpon>Merge_With_Existing_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Page_Numbers_in_HTML_Demo.resx">
+      <DependentUpon>Page_Numbers_in_HTML_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Page_Numbers_in_HTML_Description.resx">
+      <DependentUpon>Page_Numbers_in_HTML_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Headers_and_Footers\Page_Numbers_in_HTML_Sample_Code.resx">
+      <DependentUpon>Page_Numbers_in_HTML_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Demo.resx">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Description.resx">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Sample_Code.resx">
+      <DependentUpon>Avoid_Page_Breaks_Inside_HTML_Elements_Using_CSS_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_Images_Using_API_Demo.resx">
+      <DependentUpon>Avoid_Page_Breaks_Inside_Images_Using_API_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_Images_Using_API_Description.resx">
+      <DependentUpon>Avoid_Page_Breaks_Inside_Images_Using_API_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Avoid_Page_Breaks_Inside_Images_Using_API_Sample_Code.resx">
+      <DependentUpon>Avoid_Page_Breaks_Inside_Images_Using_API_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_CSS_Demo.resx">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_CSS_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_CSS_Description.resx">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_CSS_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Page_Breaks\Insert_Page_Breaks_Before_After_Using_CSS_Sample_Code.resx">
+      <DependentUpon>Insert_Page_Breaks_Before_After_Using_CSS_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Partially_Convert_HTML_Demo.resx">
+      <DependentUpon>Partially_Convert_HTML_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Partially_Convert_HTML_Description.resx">
+      <DependentUpon>Partially_Convert_HTML_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Partially_Convert_HTML_Sample_Code.resx">
+      <DependentUpon>Partially_Convert_HTML_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Forms\Auto_Create_PDF_Forms_Demo.resx">
+      <DependentUpon>Auto_Create_PDF_Forms_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Forms\Auto_Create_PDF_Forms_Description.resx">
+      <DependentUpon>Auto_Create_PDF_Forms_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\PDF_Forms\Auto_Create_PDF_Forms_Sample_Code.resx">
+      <DependentUpon>Auto_Create_PDF_Forms_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Repeat_HTML_Table_Header_Footer_Demo.resx">
+      <DependentUpon>Repeat_HTML_Table_Header_Footer_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Repeat_HTML_Table_Header_Footer_Description.resx">
+      <DependentUpon>Repeat_HTML_Table_Header_Footer_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Repeat_HTML_Table_Header_Footer_Sample_Code.resx">
+      <DependentUpon>Repeat_HTML_Table_Header_Footer_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Define_in_HTML_Table_of_Contents_Items_Demo.resx">
+      <DependentUpon>Define_in_HTML_Table_of_Contents_Items_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Define_in_HTML_Table_of_Contents_Items_Description.resx">
+      <DependentUpon>Define_in_HTML_Table_of_Contents_Items_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Define_in_HTML_Table_of_Contents_Items_Sample_Code.resx">
+      <DependentUpon>Define_in_HTML_Table_of_Contents_Items_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Insert_PDF_Pages_Before_Table_of_Contents_Demo.resx">
+      <DependentUpon>Insert_PDF_Pages_Before_Table_of_Contents_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Insert_PDF_Pages_Before_Table_of_Contents_Description.resx">
+      <DependentUpon>Insert_PDF_Pages_Before_Table_of_Contents_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Insert_PDF_Pages_Before_Table_of_Contents_Sample_Code.resx">
+      <DependentUpon>Insert_PDF_Pages_Before_Table_of_Contents_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Merge_Table_of_Contents_Demo.resx">
+      <DependentUpon>Merge_Table_of_Contents_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Merge_Table_of_Contents_Description.resx">
+      <DependentUpon>Merge_Table_of_Contents_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Table_of_Contents\Merge_Table_of_Contents_Sample_Code.resx">
+      <DependentUpon>Merge_Table_of_Contents_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Text_Notes\Create_Text_Notes_Demo.resx">
+      <DependentUpon>Create_Text_Notes_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Text_Notes\Create_Text_Notes_Description.resx">
+      <DependentUpon>Create_Text_Notes_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Text_Notes\Create_Text_Notes_Sample_Code.resx">
+      <DependentUpon>Create_Text_Notes_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Triggering_Modes\Conversion_Triggering_Modes_Demo.resx">
+      <DependentUpon>Conversion_Triggering_Modes_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Triggering_Modes\Conversion_Triggering_Modes_Description.resx">
+      <DependentUpon>Conversion_Triggering_Modes_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Triggering_Modes\Conversion_Triggering_Modes_Sample_Code.resx">
+      <DependentUpon>Conversion_Triggering_Modes_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\URI_Links\Convert_URI_Links_to_PDF_Demo.resx">
+      <DependentUpon>Convert_URI_Links_to_PDF_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\URI_Links\Convert_URI_Links_to_PDF_Description.resx">
+      <DependentUpon>Convert_URI_Links_to_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\URI_Links\Convert_URI_Links_to_PDF_Samples_Code.resx">
+      <DependentUpon>Convert_URI_Links_to_PDF_Samples_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\URI_Links\Define_Custom_URI_Links_Demo.resx">
+      <DependentUpon>Define_Custom_URI_Links_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\URI_Links\Define_Custom_URI_Links_Description.resx">
+      <DependentUpon>Define_Custom_URI_Links_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\URI_Links\Define_Custom_URI_Links_Sample_Code.resx">
+      <DependentUpon>Define_Custom_URI_Links_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Watermarks_Stamps\Add_Watermarks_Stamps_Demo.resx">
+      <DependentUpon>Add_Watermarks_Stamps_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Watermarks_Stamps\Add_Watermarks_Stamps_Description.resx">
+      <DependentUpon>Add_Watermarks_Stamps_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTML_to_PDF\Watermarks_Stamps\Add_Watermarks_Stamps_Sample_Code.resx">
+      <DependentUpon>Add_Watermarks_Stamps_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Bookmarks_Demo.resx">
+      <DependentUpon>Bookmarks_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Bookmarks_Description.resx">
+      <DependentUpon>Bookmarks_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Bookmarks_Sample_Code.resx">
+      <DependentUpon>Bookmarks_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Create_PDF_Documents_Demo.resx">
+      <DependentUpon>Create_PDF_Documents_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Create_PDF_Documents_Description.resx">
+      <DependentUpon>Create_PDF_Documents_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Create_PDF_Documents_Sample_Code.resx">
+      <DependentUpon>Create_PDF_Documents_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\File_Attachments_Demo.resx">
+      <DependentUpon>File_Attachments_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\File_Attachments_Description.resx">
+      <DependentUpon>File_Attachments_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\File_Attachments_Sample_Code.resx">
+      <DependentUpon>File_Attachments_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\File_Links_Demo.resx">
+      <DependentUpon>File_Links_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\File_Links_Description.resx">
+      <DependentUpon>File_Links_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\File_Links_Sample_Code.resx">
+      <DependentUpon>File_Links_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Graphic_Elements_Demo.resx">
+      <DependentUpon>Graphic_Elements_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Graphic_Elements_Description.resx">
+      <DependentUpon>Graphic_Elements_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Graphic_Elements_Sample_Code.resx">
+      <DependentUpon>Graphic_Elements_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Header_Footer_Auto_Resize_Sample_Code.resx">
+      <DependentUpon>Header_Footer_Auto_Resize_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Header_Footer_Auto_Resize_Description.resx">
+      <DependentUpon>Header_Footer_Auto_Resize_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Header_Footer_Auto_Resize_Demo.resx">
+      <DependentUpon>Header_Footer_Auto_Resize_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Header_Footer_Change_Demo.resx">
+      <DependentUpon>Header_Footer_Change_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Header_Footer_Change_Description.resx">
+      <DependentUpon>Header_Footer_Change_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Header_Footer_Change_Sample_Code.resx">
+      <DependentUpon>Header_Footer_Change_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Header_Footer_In_External_PDF_Demo.resx">
+      <DependentUpon>Header_Footer_In_External_PDF_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Header_Footer_In_External_PDF_Description.resx">
+      <DependentUpon>Header_Footer_In_External_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Header_Footer_In_External_PDF_Sample_Code.resx">
+      <DependentUpon>Header_Footer_In_External_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\HTML_in_Header_Footer_Demo.resx">
+      <DependentUpon>HTML_in_Header_Footer_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\HTML_in_Header_Footer_Description.resx">
+      <DependentUpon>HTML_in_Header_Footer_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\HTML_in_Header_Footer_Sample_Code.resx">
+      <DependentUpon>HTML_in_Header_Footer_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Page_Numbers_in_HTML_Demo.resx">
+      <DependentUpon>Page_Numbers_in_HTML_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Page_Numbers_in_HTML_Description.resx">
+      <DependentUpon>Page_Numbers_in_HTML_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Headers_and_Footers\Page_Numbers_in_HTML_Sample_Code.resx">
+      <DependentUpon>Page_Numbers_in_HTML_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\HTML_to_Image_Elements_Demo.resx">
+      <DependentUpon>HTML_to_Image_Elements_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\HTML_to_Image_Elements_Description.resx">
+      <DependentUpon>HTML_to_Image_Elements_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\HTML_to_Image_Elements_Sample_Code.resx">
+      <DependentUpon>HTML_to_Image_Elements_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\HTML_to_PDF_Elements_Demo.resx">
+      <DependentUpon>HTML_to_PDF_Elements_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\HTML_to_PDF_Elements_Description.resx">
+      <DependentUpon>HTML_to_PDF_Elements_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\HTML_to_PDF_Elements_Sample_Code.resx">
+      <DependentUpon>HTML_to_PDF_Elements_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Image_Elements_Demo.resx">
+      <DependentUpon>Image_Elements_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Image_Elements_Description.resx">
+      <DependentUpon>Image_Elements_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Image_Elements_Sample_Code.resx">
+      <DependentUpon>Image_Elements_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Internal_Links_Demo.resx">
+      <DependentUpon>Internal_Links_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Internal_Links_Description.resx">
+      <DependentUpon>Internal_Links_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Internal_Links_Sample_Code.resx">
+      <DependentUpon>Internal_Links_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Button_Clicked_Demo.resx">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Button_Clicked_Description.resx">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Button_Clicked_Sample_Code.resx">
+      <DependentUpon>Execute_JavaScript_Button_Clicked_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Open_Action_Demo.resx">
+      <DependentUpon>Execute_JavaScript_Open_Action_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Open_Action_Description.resx">
+      <DependentUpon>Execute_JavaScript_Open_Action_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Actions\Execute_JavaScript_Open_Action_Sample_Code.resx">
+      <DependentUpon>Execute_JavaScript_Open_Action_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Actions\Go_To_Page_Open_Action_Demo.resx">
+      <DependentUpon>Go_To_Page_Open_Action_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Actions\Go_To_Page_Open_Action_Description.resx">
+      <DependentUpon>Go_To_Page_Open_Action_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Actions\Go_To_Page_Open_Action_Sample_Code.resx">
+      <DependentUpon>Go_To_Page_Open_Action_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Forms_Demo.resx">
+      <DependentUpon>PDF_Forms_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Forms_Description.resx">
+      <DependentUpon>PDF_Forms_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Forms_Sample_Code.resx">
+      <DependentUpon>PDF_Forms_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Security\Digital_Signatures_Demo.resx">
+      <DependentUpon>Digital_Signatures_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Security\Digital_Signatures_Description.resx">
+      <DependentUpon>Digital_Signatures_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Security\Digital_Signatures_Sample_Code.resx">
+      <DependentUpon>Digital_Signatures_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Security\PDF_Permissions_and_Password_Demo.resx">
+      <DependentUpon>PDF_Permissions_and_Password_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Security\PDF_Permissions_and_Password_Description.resx">
+      <DependentUpon>PDF_Permissions_and_Password_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Security\PDF_Permissions_and_Password_Sample_Code.resx">
+      <DependentUpon>PDF_Permissions_and_Password_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Demo.resx">
+      <DependentUpon>Set_Initial_Zoom_Level_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Description.resx">
+      <DependentUpon>Set_Initial_Zoom_Level_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Viewer_Preferences\Set_Initial_Zoom_Level_Sample_Code.resx">
+      <DependentUpon>Set_Initial_Zoom_Level_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Viewer_Preferences\Set_Viewer_Preferences_Demo.resx">
+      <DependentUpon>Set_Viewer_Preferences_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Viewer_Preferences\Set_Viewer_Preferences_Description.resx">
+      <DependentUpon>Set_Viewer_Preferences_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\PDF_Viewer_Preferences\Set_Viewer_Preferences_Sample_Code.resx">
+      <DependentUpon>Set_Viewer_Preferences_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Text_Elements_Demo.resx">
+      <DependentUpon>Text_Elements_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Text_Elements_Description.resx">
+      <DependentUpon>Text_Elements_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Text_Elements_Sample_Code.resx">
+      <DependentUpon>Text_Elements_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Text_Notes_Demo.resx">
+      <DependentUpon>Text_Notes_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Text_Notes_Description.resx">
+      <DependentUpon>Text_Notes_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\Text_Notes_Sample_Code.resx">
+      <DependentUpon>Text_Notes_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\URI_Links_Demo.resx">
+      <DependentUpon>URI_Links_Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\URI_Links_Description.resx">
+      <DependentUpon>URI_Links_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Creator\URI_Links_Sample_Code.resx">
+      <DependentUpon>URI_Links_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Fill_PDF_Forms_Demo.resx">
+      <DependentUpon>Fill_PDF_Forms_Demo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Fill_PDF_Forms_Description.resx">
+      <DependentUpon>Fill_PDF_Forms_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Fill_PDF_Forms_Sample_Code.resx">
+      <DependentUpon>Fill_PDF_Forms_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Merge_PDF_Demo.resx">
+      <DependentUpon>Merge_PDF_Demo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Merge_PDF_Description.resx">
+      <DependentUpon>Merge_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Merge_PDF_Sample_Code.resx">
+      <DependentUpon>Merge_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Split_PDF_Demo.resx">
+      <DependentUpon>Split_PDF_Demo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Split_PDF_Description.resx">
+      <DependentUpon>Split_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Split_PDF_Sample_Code.resx">
+      <DependentUpon>Split_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Stamp_PDF_Demo.resx">
+      <DependentUpon>Stamp_PDF_Demo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Stamp_PDF_Description.resx">
+      <DependentUpon>Stamp_PDF_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF_Editor\Stamp_PDF_Sample_Code.resx">
+      <DependentUpon>Stamp_PDF_Sample_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="evo.ico" />
+    <None Include="img\ExpandAll.bmp" />
+    <None Include="img\CollapseAll.bmp" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist "$(TargetDir)DemoAppFiles" (xcopy /I /E /Q /Y "$(ProjectDir)..\..\..\..\DemoAppFiles" "$(TargetDir)DemoAppFiles")</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
